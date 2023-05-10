@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 
-const args = process.argv.slice(2);
+const args = process.argv[2]?.trim().split(/\s+/g).filter(x => x.length);
+
+if (!args || args?.length === 0) process.exit(0);
 
 let cmd = args[0];
 let started = false;
